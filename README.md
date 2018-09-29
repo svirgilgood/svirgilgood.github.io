@@ -1,5 +1,5 @@
-# e2dubba.github.io-politicotheological
+# e2dubba.github.io
 
-## This is a sub heading
+[please see following page](politicotheological.html)
 
 ## And another one
