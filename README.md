@@ -1,5 +1,13 @@
 # e2dubba.github.io
 
-[please see following page](politicotheological.html)
+[The Political Theology Topic Model visualisation is available here](politicotheological.html)
 
-## And another one
+## List of Blog posts 
+
+<ul>
+    {% for post in site.posts %}
+    <li>
+    <a href="{{ post.url }}">{{ post.title }} </a>
+    </li>
+    {% endfor %}
+</ul>

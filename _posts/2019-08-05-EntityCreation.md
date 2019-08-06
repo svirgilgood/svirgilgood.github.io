@@ -1,3 +1,8 @@
+---
+layout: post 
+title: "Updating Properties"
+---
+
 # Monday, Aug 5, 2019 
 
 The major problems I am still trying to wrestle with are enities not importing,

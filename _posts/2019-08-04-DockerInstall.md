@@ -1,3 +1,8 @@
+---
+layout: post 
+title: "Installing Docker"
+--- 
+
 # Sunday, Aug 4, 2019 
 
 ## Install Docker 
