@@ -1,0 +1,23 @@
+# Wikibase Creation For Assurbanipal's Library 
+
+## Purpose 
+
+The main question I have is: What can we derive from the way Mesopotamians
+orgainized knowledge to better understand the way they understood how the world
+worked, or even, what the world was? 
+
+The two motivations for this question: 1) provide a better understanding to
+the organazation of information for librarians and the history of library
+science; and 2) develop a knowledge graph of Mesopotamian Canonical Text
+Metadata and Persons which will provide a platform for answering this question
+and others.^[By "canonical text", I simply mean the standard works for scribal
+education, scholarly specification, and the non-archival documents found in
+Assurbanipal's library] 
+
+
+## References 
+
+* [Wikibase for Research Infrastructure](https://medium.com/@thisismattmiller/wikibase-for-research-infrastructure-part-1-d3f640dfad34)
+* [Build your own Knowledge Graph](https://medium.com/vectrconsulting/build-your-own-knowledge-graph-975cf6dde67f)
+
+
