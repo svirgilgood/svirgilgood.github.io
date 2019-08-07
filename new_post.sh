@@ -9,7 +9,7 @@ file="_posts/""$ftitle"
 cat << EOF > "$file"
 ---
 layout: post
-title: ${title}" 
+title: ${title}
 category: 
 tags: []
 --- 
@@ -18,5 +18,5 @@ tags: []
 
 EOF
 
-vim "$file"
+exec "$EDITOR" "$file"
 
