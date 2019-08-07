@@ -1,0 +1,22 @@
+#!/bin/bash 
+
+day="$(date "+%Y-%m-%d-")"
+title="$1"
+ftitle="$day""${title// /_}"".md"
+file="_posts/""$ftitle"
+# touch "$file"
+
+cat << EOF > "$file"
+---
+layout: post
+title: ${title}" 
+category: 
+tags: []
+--- 
+
+# ${title}
+
+EOF
+
+vim "$file"
+
