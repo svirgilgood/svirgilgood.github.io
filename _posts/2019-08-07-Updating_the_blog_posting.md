@@ -2,7 +2,7 @@
 layout: post
 title: Updating the blog posting
 category: markdown
-tags: [jekyll, bash]
+tags: [jekyll, bash, zotero]
 --- 
 
 # Updating the blog posting
