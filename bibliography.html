@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bibliography</title>
+    <script>
+        const Url='https://api.zotero.org/groups/2356093/items';
+
+        function asyncReorder(url, bibArray, startNum, interval) {
+            return new Promise( function (resolve, reject) {
+                const formUrl = url + '?limit='+interval+'&start='+startNum;
+                const res = fetch(formUrl)
+                    .then(data=>{return data.json()})
+                    .then(res=>{
+                        if (res.length === interval) {
+                            bibArray = zotParser(res, bibArray);
+                            resolve({asyncReorder(url, bibArray, startNum+interval, interval)});
+                        } else if (res.length < interval) {
+                            bibArray = zotParser(res, bibArray)
+                            resolve(bibArray)
+                        } else {
+                            resolve(bibArray);
+                        }
+                    })
+
+            });
+        };
+
+
+        function zotParser(res, bibArray) {
+            for (const item of res) {
+                const record = item['data'];
+                if (record['itemType'] != 'attachement') {
+                    bibArray.push(record)
+                }
+            }
+            return bibArray
+        };
+
+        
+        fetch(Url)
+          .then(data=>{return data.json()})
+          .then(res=>zotParser(res))
+          .then(
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
