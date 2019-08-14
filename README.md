@@ -2,6 +2,10 @@
 
 [The Political Theology Topic Model visualisation is available here](politicotheological.html)
 
+## Bibliography
+
+[A Bibliography is available here](bibliography.html)
+
 ## List of Blog posts 
 
 <ul>
