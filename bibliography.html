@@ -4,48 +4,66 @@
     <meta charset="UTF-8">
     <title>Bibliography</title>
     <script>
-        const Url='https://api.zotero.org/groups/2356093/items';
-
-        function asyncReorder(url, bibArray, startNum, interval) {
-            return new Promise( function (resolve, reject) {
-                const formUrl = url + '?limit='+interval+'&start='+startNum;
-                const res = fetch(formUrl)
-                    .then(data=>{return data.json()})
-                    .then(res=>{
-                        if (res.length === interval) {
-                            bibArray = zotParser(res, bibArray);
-                            resolve({asyncReorder(url, bibArray, startNum+interval, interval)});
-                        } else if (res.length < interval) {
-                            bibArray = zotParser(res, bibArray)
-                            resolve(bibArray)
-                        } else {
-                            resolve(bibArray);
-                        }
-                    })
-
-            });
-        };
-
-
-        function zotParser(res, bibArray) {
-            for (const item of res) {
-                const record = item['data'];
-                if (record['itemType'] != 'attachement') {
-                    bibArray.push(record)
-                }
-            }
-            return bibArray
-        };
-
+        const Urll = 'https://api.zotero.org/groups/2356093/items?itemType=-attachment+%7C%7C+note';
         
-        fetch(Url)
-          .then(data=>{return data.json()})
-          .then(res=>zotParser(res))
-          .then(
+        function totalResultsAndPager(totalResults, links) {
+            let nav = document.createElement('div');
+            let forward = document.createElement('span');
+            forward.style.cssText = 'float;right';
+            forward.innerHTML = 'Next';
+            let total = document.createElement('span');
+            total.style.cssText = 'float;center';
+            total.innerHTML = 'Number of Items: ' + totalResults;
+        };
+
+        function bibParser(data) {
+            let table = document.createElement('table');
+            table.id = 'bibTable';
+            let thead = document.createElement('thead');
+            for (const col of ['Contributor', 'Title', 'Date']) {
+                let th = document.createElement('th');
+                th.innerHTML(col);
+                thead.appendChild(th)
+            };
+
+            for (const bib of data) {
+                bib = bib.data;
+                let tr = table.insertRow(-1);
+                let authCell = tr.insertCell(-1);
+                authCell.innerHTML = data.creators[0].join();
+                for (const item of ['title', 'date']) {
+                    let cell = tr.insertCell(-1);
+                    tr.innerHTML = data[item];
+                }
+                
+            };
+
+            let div = document.getElementById('TableDiv');
+            div.appendChild(table)
+
+        };
+            
+
+        function grabBibliography() {
+            fetch(Url)
+              .then(resp=>{
+                  let totalResults = resp.headers.get('Total-Result');
+                  let links = resp.headers.get('Link');
+                  totalResultsAndPager(totalResults, links);
+                  return resp.json()})
+              .then(data=>{bibParser(data)})
+
+        };
 
     </script>
 </head>
 <body>
+    <div id="TableDiv"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            grabBibliography();
+        });
+    </script>
     
 </body>
 </html>
