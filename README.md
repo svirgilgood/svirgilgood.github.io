@@ -1,6 +1,11 @@
 # e2dubba.github.io
 
-[The Political Theology Topic Model visualisation is available here](politicotheological.html)
+## Projects
+
+- [The Political Theology Topic Model visualisation is available here](politicotheological.html)
+
+- [Linked-Amarna: A Graph approach to Personal names in the Amarna
+  Letters](http://e2dubba.github.io/linked-amarna)
 
 ## Bibliography
 
