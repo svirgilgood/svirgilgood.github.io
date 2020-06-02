@@ -7,9 +7,6 @@
 - [Linked-Amarna: A Graph approach to Personal names in the Amarna
   Letters](http://e2dubba.github.io/linked-amarna)
 
-## Bibliography
-
-[A Bibliography is available here](bibliography.html)
 
 ## List of Blog posts 
 
